@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="userdata"
+            type="chandan.satyendra.prasad.databindingapplication.UserData" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/testdata"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hello World!"
+            app:layout_constraintBottom_toTopOf="@+id/lbl_first_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/lbl_first_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{userdata.firstname}"
+            app:layout_constraintBottom_toTopOf="@+id/lbl_last_name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/testdata" />
+
+        <TextView
+            android:id="@+id/lbl_last_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{userdata.lastname}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lbl_first_name" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
